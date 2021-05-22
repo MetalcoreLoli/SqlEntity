@@ -16,7 +16,7 @@ namespace LoliSqlEntity.Lib.Types
 
         public override string ToString()
         {
-            return "[INT]";
+            return "INT";
         }
     }
 }

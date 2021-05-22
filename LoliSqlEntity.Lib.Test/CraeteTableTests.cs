@@ -16,8 +16,21 @@ namespace LoliSqlEntity.Lib.Test
                     .AddParameter(new ColumnParameter("Id", new SqlTypeInt()))
                     .Construct();
             
-            Assert.AreEqual("CREATE TABLE [dbo].[TestTable] ([Id] [INT]);\ngo\n", testTable);
+            Assert.AreEqual("CREATE TABLE [dbo].[TestTable] ([Id] INT);\ngo\n", testTable);
 
+        }
+
+
+        [Test]
+        public void CreateColumnTest()
+        {
+            var test =
+                new SqlQueryBuilder<CreateTable>()
+                    .AddParameter(new TableNameParameter("TestColumn"))
+                    .AddParameter(ColumnParameter.New("Id", new SqlTypeInt()).Identity().NotNull().Build())
+                    .Construct();
+            
+            Assert.AreEqual("CREATE TABLE [dbo].[TestColumn] ([Id] INT IDENTITY (1, 1) NOT NULL);\ngo\n", test);
         }
     }
 }
