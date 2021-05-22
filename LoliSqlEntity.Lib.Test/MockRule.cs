@@ -26,7 +26,6 @@ namespace LoliSqlEntity.Lib.Test
                     param.Take(param.Length - 2).Aggregate("", (acc, c) => acc + c));
             }
 
-            sb.Append(";\ngo\n");
             return sb.ToString();
         }
     }
