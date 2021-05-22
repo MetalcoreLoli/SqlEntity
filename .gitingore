@@ -1,0 +1,14 @@
+.idea
+LoliSqlEntity.sln.DotSettings.user
+
+LoliSqlEntity.Lib\bin
+LoliSqlEntity.Lib\obj
+
+LoliSqlEntity.Lib\bin\Debug
+LoliSqlEntity.Lib\obj\Debug
+
+LoliSqlEntity.Lib.Test\bin
+LoliSqlEntity.Lib.Test\obj
+
+LoliSqlEntity.Lib.Test\bin\Debug
+LoliSqlEntity.Lib.Test\obj\Debug

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoliSqlEntity.Lib", "LoliSqlEntity.Lib\LoliSqlEntity.Lib.csproj", "{C8C4B1F0-7AC1-4B04-8720-908F15FF1E6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoliSqlEntity.Lib.Test", "LoliSqlEntity.Lib.Test\LoliSqlEntity.Lib.Test.csproj", "{1BC35C13-37D3-4D35-8D61-8B4CAE5467A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8C4B1F0-7AC1-4B04-8720-908F15FF1E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C4B1F0-7AC1-4B04-8720-908F15FF1E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C4B1F0-7AC1-4B04-8720-908F15FF1E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C4B1F0-7AC1-4B04-8720-908F15FF1E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC35C13-37D3-4D35-8D61-8B4CAE5467A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC35C13-37D3-4D35-8D61-8B4CAE5467A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC35C13-37D3-4D35-8D61-8B4CAE5467A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC35C13-37D3-4D35-8D61-8B4CAE5467A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
