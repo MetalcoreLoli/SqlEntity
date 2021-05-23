@@ -8,6 +8,10 @@ namespace LoliSqlEntity.Lib.Rules
     {
         private readonly Dictionary<Type, IRule> _container;
 
+        private Lazy<DefaultRuleContainer> _instance = new Lazy<DefaultRuleContainer>(() => new DefaultRuleContainer());
+
+        public DefaultRuleContainer Instance => _instance.Value;
+
         public DefaultRuleContainer()
         {
             _container = new Dictionary<Type, IRule>();
