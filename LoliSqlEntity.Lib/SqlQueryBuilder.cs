@@ -16,7 +16,7 @@ namespace LoliSqlEntity.Lib
         public  SqlQueryBuilder(IRuleContainer container = null)
         {
             _query = new TSqlQuery();
-            _container = container ?? new DefaultRuleContainer();
+            _container = container ?? DefaultRuleContainer.Instance;
         }
 
         public SqlQueryBuilder<TSqlQuery> AddParameter(ISqlParameter parameter)
