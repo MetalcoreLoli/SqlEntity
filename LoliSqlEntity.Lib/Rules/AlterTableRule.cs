@@ -9,14 +9,8 @@ namespace LoliSqlEntity.Lib.Rules
 {
     public class AlterTableRule :  AlterRule
     {
-        private readonly Dictionary<Type, string> actions;
-
         public AlterTableRule()
         {
-            actions = new Dictionary<Type, string>
-            {
-                {typeof(ColumnParameter), "ADD COLUMN"}
-            };
         }
 
         public override string Execute(ISqlQuery sqlQuery)
@@ -33,7 +27,12 @@ namespace LoliSqlEntity.Lib.Rules
             sb.Append($"{Prefix} TABLE [{tableName.Name}].[{tableName.Value}]\n\t");
 
             foreach (var param in sqlQuery.Parameters.Skip(1))
-                sb.Append($"{actions[param.GetType()]} {param}");
+            {
+                if (param is ColumnParameter)
+                    sb.Append($"ADD COLUMN {param}");
+                else
+                    sb.Append($"{param}");
+            }
             
             return sb.ToString();
         }

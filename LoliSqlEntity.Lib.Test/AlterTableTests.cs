@@ -9,7 +9,7 @@ namespace LoliSqlEntity.Lib.Test
     {
 
         [Test]
-        public void AlterTable()
+        public void AlterAddColumnTable()
         {
             var alterTable = 
                 new SqlQueryBuilder<AlterTable>()
@@ -19,5 +19,30 @@ namespace LoliSqlEntity.Lib.Test
 
             Assert.AreEqual("ALTER TABLE [dbo].[TEST]\n\tADD COLUMN [testNvarchar] NVARCHAR (25);\ngo\n", alterTable);
         }
+        
+        [Test]
+        public void AlterDropColumnTable()
+        {
+            var alterTable = 
+                new SqlQueryBuilder<AlterTable>()
+                    .AddParameter(new TableNameParameter("TEST"))
+                    .AddParameter(new DropColumnParameter("testNvarchar"))
+                    .Construct();
+
+            Assert.AreEqual("ALTER TABLE [dbo].[TEST]\n\tDROP COLUMN [testNvarchar];\ngo\n", alterTable);
+        }
+        
+        [Test]
+        public void AlterColumnTable()
+        {
+            var alterTable = 
+                new SqlQueryBuilder<AlterTable>()
+                    .AddParameter(new TableNameParameter("TEST"))
+                    .AddParameter(new AlterColumnParameter("testNvarchar", new SqlTypeNvarchar(25)))
+                    .Construct();
+
+            Assert.AreEqual("ALTER TABLE [dbo].[TEST]\n\tALTER COLUMN [testNvarchar] NVARCHAR (25);\ngo\n", alterTable);
+        }
+        
     }
 }

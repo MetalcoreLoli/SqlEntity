@@ -5,5 +5,7 @@
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.CreateTableTests.CreateTable&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.CreateTableTests.CreateColumnTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.AlterTableTests.AlterTable&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.AlterTableTests.AlterDropColumnTable&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.AlterTableTests.AlterColumnTable&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
