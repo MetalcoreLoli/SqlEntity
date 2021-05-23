@@ -16,6 +16,7 @@ namespace LoliSqlEntity.Lib.Rules
         {
             _container = new Dictionary<Type, IRule>();
             AddRule<CreateTable>(new CreateTableRule());
+            AddRule<AlterTable>(new AlterTableRule());
         }
 
         public IRuleContainer AddRule<TQuery>(IRule rule) where TQuery : ISqlQuery
