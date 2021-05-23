@@ -23,9 +23,9 @@ namespace LoliSqlEntity.Lib.Table.Parameters.Builders
             return this;
         }
 
-        public ColumnParameterBuilder Identity()
+        public ColumnParameterBuilder Identity(uint seed = 1, uint increment = 1)
         {
-            _column.Constraints.Add(new IdentityConstraint());
+            _column.Constraints.Add(new IdentityConstraint(seed, increment));
             return this;
         }
 
