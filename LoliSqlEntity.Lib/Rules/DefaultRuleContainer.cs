@@ -35,5 +35,15 @@ namespace LoliSqlEntity.Lib.Rules
             return _container[queryType];
 
         }
+
+        public IRuleContainer RemoveRule<TQuery>() where TQuery : ISqlQuery
+        {
+            var queryType = typeof(TQuery);
+            if (!_container.ContainsKey(queryType))
+                throw new ArgumentOutOfRangeException($"Container does not contain query {queryType.Name}");
+
+            _container.Remove(queryType);
+            return this;
+        }
     }
 }

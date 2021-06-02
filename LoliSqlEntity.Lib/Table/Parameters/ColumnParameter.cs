@@ -19,11 +19,16 @@ namespace LoliSqlEntity.Lib.Table.Parameters
         {
         }
 
-        public ColumnParameter(string name, ISqlParameterType type)
+
+        public ColumnParameter(string name, ISqlParameterType type) : this(name, type, new List<IColumnConstraint>())
+        {
+        }
+
+        public ColumnParameter(string name, ISqlParameterType type, IEnumerable<IColumnConstraint> constraints)
         {
             Name = name;
             Type = type;
-            Constraints = new List<IColumnConstraint>();
+            Constraints = constraints.ToList();
         }
 
         public static ColumnParameterBuilder New(string name, ISqlParameterType type)
