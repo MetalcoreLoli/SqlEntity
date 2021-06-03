@@ -31,6 +31,5 @@ namespace LoliSqlEntity.Lib
             var queryAsString = _container.GetRule<TSqlQuery>().Execute(_query).ReturnAs<String>();
             return sb.Append(queryAsString).Append(";\ngo\n").ToString();
         }
-
     }
 }

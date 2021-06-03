@@ -26,11 +26,9 @@ namespace LoliSqlEntity.Lib.Rules.DDL
                 throw new Exception("cannot create empty table");
 
             sb.Append(' ').Append("(\n");
-            var columns = query.Parameters.Skip(1).Aggregate("", (acc, param) => acc + param + ",\n\t");
+            var columns = query.Parameters.Skip(1).AsStringWithDelimiter(",\n\t");
 
-            sb.Append(
-                    columns.SkipLast(3).Aggregate("", (acc, c) => acc + c))
-              .Append("\n)");
+            sb.Append(columns).Append("\n)");
             return DefaultRuleResult.Wrap(sb.ToString());
         }
     }

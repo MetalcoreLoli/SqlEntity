@@ -7,7 +7,7 @@ namespace LoliSqlEntity.Lib.DML
     {
         public UpdateQuery(TableNameParameter tableName, IList<ISqlParameter> parameters)
         {
-            Name = "SQL UPDATE";
+            Name = "UPDATE";
             TableName = tableName;
             Parameters = parameters;
         }
