@@ -1,10 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Magical.Cake\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Magical.Cake\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+      "/home/daniel/.dotnet/store/|arch|/|tfm|",
+      "/home/daniel/.nuget/packages"
     ]
   }
 }

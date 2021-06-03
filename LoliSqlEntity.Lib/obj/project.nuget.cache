@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kSxIRKqErQaK06645BBqiO/OOFhYmGlLphoT2iwgmOPL+EhXsLvkhslI3vPMBH6C6zcVGQgCBNscYRln1BD4Ig==",
+  "dgSpecHash": "qL2Bn2TwD1ChTKu8tm9wBaoEZ/ezZk/keBkrS8IH5UdIJgrzBFRalKG7MFfagdcShHGkjkWpf/gkRCRbmcHTkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Magical.Cake\\RiderProjects\\LoliSqlEntity\\LoliSqlEntity.Lib\\LoliSqlEntity.Lib.csproj",
+  "projectFilePath": "/home/daniel/Projects/cshrap/SqlEntity/LoliSqlEntity.Lib/LoliSqlEntity.Lib.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

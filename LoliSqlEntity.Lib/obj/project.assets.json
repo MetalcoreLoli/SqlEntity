@@ -8,34 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Magical.Cake\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
+    "/home/daniel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Magical.Cake\\RiderProjects\\LoliSqlEntity\\LoliSqlEntity.Lib\\LoliSqlEntity.Lib.csproj",
+      "projectUniqueName": "/home/daniel/Projects/cshrap/SqlEntity/LoliSqlEntity.Lib/LoliSqlEntity.Lib.csproj",
       "projectName": "LoliSqlEntity.Lib",
-      "projectPath": "C:\\Users\\Magical.Cake\\RiderProjects\\LoliSqlEntity\\LoliSqlEntity.Lib\\LoliSqlEntity.Lib.csproj",
-      "packagesPath": "C:\\Users\\Magical.Cake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Magical.Cake\\RiderProjects\\LoliSqlEntity\\LoliSqlEntity.Lib\\obj\\",
+      "projectPath": "/home/daniel/Projects/cshrap/SqlEntity/LoliSqlEntity.Lib/LoliSqlEntity.Lib.csproj",
+      "packagesPath": "/home/daniel/.nuget/packages/",
+      "outputPath": "/home/daniel/Projects/cshrap/SqlEntity/LoliSqlEntity.Lib/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Magical.Cake\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/home/daniel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -68,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/nix/store/cklv937fxhjar087xjvyh7gyip31bn6h-dotnet-sdk-5.0.202/sdk/5.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

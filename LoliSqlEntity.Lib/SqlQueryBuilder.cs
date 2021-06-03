@@ -28,7 +28,7 @@ namespace LoliSqlEntity.Lib
         public string Construct()
         {
             var sb = new StringBuilder();
-            var queryAsString = _container.GetRule<TSqlQuery>().Execute(_query);
+            var queryAsString = _container.GetRule<TSqlQuery>().Execute(_query).ReturnAs<String>();
             return sb.Append(queryAsString).Append(";\ngo\n").ToString();
         }
 

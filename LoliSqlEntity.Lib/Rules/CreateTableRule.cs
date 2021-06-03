@@ -8,7 +8,7 @@ namespace LoliSqlEntity.Lib.Rules
 {
     public sealed class CreateTableRule : CreateRule
     {
-        public override string Execute(ISqlQuery sqlQuery)
+        public override IRuleResult Execute(ISqlQuery sqlQuery)
         {
             if (sqlQuery is not CreateTable)
                 throw new InvalidCastException("sqlQuery is not CREATE TABLE");
@@ -31,7 +31,7 @@ namespace LoliSqlEntity.Lib.Rules
             sb.Append(
                     columns.SkipLast(3).Aggregate("", (acc, c) => acc + c))
               .Append("\n)");
-            return sb.ToString();
+            return DefaultRuleResult.Wrap(sb.ToString());
         }
     }
 }

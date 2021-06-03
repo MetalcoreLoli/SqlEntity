@@ -19,6 +19,11 @@ namespace LoliSqlEntity.Lib.Table.Parameters
         {
         }
 
+        public ColumnParameter(string name) : this(name, new SqlTypeNvarchar(25))
+        {
+            
+        }
+
 
         public ColumnParameter(string name, ISqlParameterType type) : this(name, type, new List<IColumnConstraint>())
         {

@@ -3,6 +3,6 @@
     public abstract class AlterRule : IRule
     {
         public string Prefix => $"ALTER"; 
-        public abstract string Execute(ISqlQuery sqlQuery);
+        public abstract IRuleResult Execute(ISqlQuery sqlQuery);
     }
 }

@@ -13,7 +13,7 @@ namespace LoliSqlEntity.Lib.Rules
         {
         }
 
-        public override string Execute(ISqlQuery sqlQuery)
+        public override IRuleResult Execute(ISqlQuery sqlQuery)
         {
             if (sqlQuery is not AlterTable)
                 throw new ArgumentOutOfRangeException("sqlQuery is not ALTER TABLE");
@@ -33,8 +33,7 @@ namespace LoliSqlEntity.Lib.Rules
                 else
                     sb.Append($"{param}");
             }
-            
-            return sb.ToString();
+            return DefaultRuleResult.Wrap(sb.ToString());
         }
     }
 }
