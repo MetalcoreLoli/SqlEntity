@@ -1,4 +1,4 @@
-﻿namespace LoliSqlEntity.Lib.Rules
+﻿namespace LoliSqlEntity.Lib.Rules.DDL
 {
     public abstract class AlterRule : IRule
     {

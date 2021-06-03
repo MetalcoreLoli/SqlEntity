@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 using LoliSqlEntity.Lib.DML;
-using LoliSqlEntity.Lib.Table.Parameters;
 
 namespace LoliSqlEntity.Lib.Rules.DML
 {

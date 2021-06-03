@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using LoliSqlEntity.Lib.DDL.Table;
 using LoliSqlEntity.Lib.DML;
+using LoliSqlEntity.Lib.Rules.DDL;
 using LoliSqlEntity.Lib.Rules.DML;
-using LoliSqlEntity.Lib.Table;
 
 namespace LoliSqlEntity.Lib.Rules
 {

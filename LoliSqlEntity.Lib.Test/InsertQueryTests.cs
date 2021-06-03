@@ -1,5 +1,5 @@
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 using LoliSqlEntity.Lib.DML;
-using LoliSqlEntity.Lib.Table.Parameters;
 using NUnit.Framework;
 
 namespace LoliSqlEntity.Lib.Test

@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 using LoliSqlEntity.Lib.DML;
 using LoliSqlEntity.Lib.Table.Parameters;
 

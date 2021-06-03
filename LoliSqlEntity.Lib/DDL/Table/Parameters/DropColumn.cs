@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LoliSqlEntity.Lib.Table.Parameters
+namespace LoliSqlEntity.Lib.DDL.Table.Parameters
 {
     public class DropColumnParameter : ISqlParameter
     {

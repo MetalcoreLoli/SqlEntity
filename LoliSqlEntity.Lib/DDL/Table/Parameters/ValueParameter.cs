@@ -1,6 +1,6 @@
 using LoliSqlEntity.Lib.Types;
 
-namespace LoliSqlEntity.Lib.Table.Parameters
+namespace LoliSqlEntity.Lib.DDL.Table.Parameters
 {
     public class ValueParameter : ISqlParameter
     {

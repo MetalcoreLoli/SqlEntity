@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LoliSqlEntity.Lib.Table;
-using LoliSqlEntity.Lib.Table.Parameters;
+using LoliSqlEntity.Lib.DDL.Table;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 
-namespace LoliSqlEntity.Lib.Rules
+namespace LoliSqlEntity.Lib.Rules.DDL
 {
     public class AlterTableRule :  AlterRule
     {
