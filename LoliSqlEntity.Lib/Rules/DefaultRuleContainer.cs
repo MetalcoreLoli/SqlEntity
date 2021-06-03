@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using LoliSqlEntity.Lib.DML;
+using LoliSqlEntity.Lib.Rules.DML;
 using LoliSqlEntity.Lib.Table;
 
 namespace LoliSqlEntity.Lib.Rules
 {
     public class DefaultRuleContainer : IRuleContainer
     {
-        private readonly Dictionary<Type, IRule> _container;
+        private readonly Dictionary<Type, IRule> _container = new();
 
         private static Lazy<DefaultRuleContainer> _instance = new(() => new DefaultRuleContainer());
 
@@ -14,9 +16,9 @@ namespace LoliSqlEntity.Lib.Rules
 
         public DefaultRuleContainer()
         {
-            _container = new Dictionary<Type, IRule>();
             AddRule<CreateTable>(new CreateTableRule());
             AddRule<AlterTable>(new AlterTableRule());
+            AddRule<InsertQuery>(new InsertAddParamsRule().And(new InsertConstructionRule()));
         }
 
         public IRuleContainer AddRule<TQuery>(IRule rule) where TQuery : ISqlQuery
@@ -45,5 +47,6 @@ namespace LoliSqlEntity.Lib.Rules
             _container.Remove(queryType);
             return this;
         }
+
     }
 }

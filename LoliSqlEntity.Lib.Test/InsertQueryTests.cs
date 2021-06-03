@@ -14,7 +14,11 @@ namespace LoliSqlEntity.Lib.Test
                 new SqlQueryBuilder<InsertQuery>()
                     .AddParameter(new TableNameParameter("testTable"))
                     .AddParameter(new ColumnParameter("Test"))
-                    .AddParameter(new ColumnParameter("Test"));
+                    .AddParameter(new ColumnParameter("TestOne"))
+                    .AddParameter(new ValueParameter("1"))
+                    .AddParameter(new ValueParameter("1"));
+            
+            Assert.AreEqual("INSERT INTO [dbo].[testTable] ([Test], [TestOne]) VALUES ('1', '1');\ngo\n", sqlBuilder.Construct());
         }
 
     }
