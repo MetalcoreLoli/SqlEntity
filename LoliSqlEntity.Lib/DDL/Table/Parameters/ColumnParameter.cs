@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LoliSqlEntity.Lib.Table.Parameters.Builders;
-using LoliSqlEntity.Lib.Table.Parameters.Constraints;
+using LoliSqlEntity.Lib.DDL.Table.Parameters.Builders;
+using LoliSqlEntity.Lib.DDL.Table.Parameters.Constraints;
 using LoliSqlEntity.Lib.Types;
 
-namespace LoliSqlEntity.Lib.Table.Parameters
+namespace LoliSqlEntity.Lib.DDL.Table.Parameters
 {
     public class ColumnParameter : ISqlParameter
     {
@@ -17,6 +17,11 @@ namespace LoliSqlEntity.Lib.Table.Parameters
 
         public ColumnParameter(): this(string.Empty, null)
         {
+        }
+
+        public ColumnParameter(string name) : this(name, new SqlTypeNvarchar(25))
+        {
+            
         }
 
 

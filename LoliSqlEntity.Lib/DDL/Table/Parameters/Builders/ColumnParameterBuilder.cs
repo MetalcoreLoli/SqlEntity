@@ -1,6 +1,6 @@
-﻿using LoliSqlEntity.Lib.Table.Parameters.Constraints;
+﻿using LoliSqlEntity.Lib.DDL.Table.Parameters.Constraints;
 
-namespace LoliSqlEntity.Lib.Table.Parameters.Builders
+namespace LoliSqlEntity.Lib.DDL.Table.Parameters.Builders
 {
     public class ColumnParameterBuilder
     {

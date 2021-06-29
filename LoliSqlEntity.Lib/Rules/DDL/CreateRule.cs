@@ -3,6 +3,6 @@
     public abstract class CreateRule : IRule
     {
         public virtual string Prefix => "CREATE";
-        public abstract string Execute(ISqlQuery sqlQuery);
+        public abstract IRuleResult Execute(ISqlQuery sqlQuery);
     }
 }

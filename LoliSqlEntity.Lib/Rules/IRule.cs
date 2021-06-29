@@ -3,6 +3,6 @@
     public interface IRule
     {
         string Prefix { get; }
-        string Execute(ISqlQuery sqlQuery);
+        IRuleResult Execute(ISqlQuery sqlQuery);
     }
 }

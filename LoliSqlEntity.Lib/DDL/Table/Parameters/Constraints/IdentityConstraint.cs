@@ -1,4 +1,4 @@
-﻿namespace LoliSqlEntity.Lib.Table.Parameters.Constraints
+﻿namespace LoliSqlEntity.Lib.DDL.Table.Parameters.Constraints
 {
     public class IdentityConstraint : IColumnConstraint
     {

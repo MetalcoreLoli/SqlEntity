@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LoliSqlEntity.Lib.Table.Parameters;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 
-namespace LoliSqlEntity.Lib.Table
+namespace LoliSqlEntity.Lib.DDL.Table
 {
     public class CreateTable : ISqlQuery
     {

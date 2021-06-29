@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using LoliSqlEntity.Lib.Rules;
 
-namespace LoliSqlEntity.Lib.Table
+namespace LoliSqlEntity.Lib.DDL.Table
 {
     public class AlterTable : ISqlQuery
     {

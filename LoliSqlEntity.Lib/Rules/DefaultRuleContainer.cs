@@ -1,37 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using LoliSqlEntity.Lib.Table;
+using LoliSqlEntity.Lib.DDL.Table;
+using LoliSqlEntity.Lib.DML;
+using LoliSqlEntity.Lib.Rules.DDL;
+using LoliSqlEntity.Lib.Rules.DML;
 
 namespace LoliSqlEntity.Lib.Rules
 {
     public class DefaultRuleContainer : IRuleContainer
     {
-        private enum GuardType
-        {
-            TypeCheck
-        }
+        private readonly Dictionary<Type, IRule> _container = new();
 
-        private readonly Dictionary<Type, IRule> _container;
+        private static Lazy<DefaultRuleContainer> _instance = new(() => new DefaultRuleContainer());
 
-        private static Lazy<DefaultRuleContainer> _instance = new Lazy<DefaultRuleContainer>(() => new DefaultRuleContainer());
-
-        /// <summary>
-        /// Guard expressions
-        /// </summary>
-        private static Dictionary<GuardType, Action<object>> _guards = new();
         public static DefaultRuleContainer Instance => _instance.Value;
 
         public DefaultRuleContainer()
         {
-            _container = new Dictionary<Type, IRule>();
             AddRule<CreateTable>(new CreateTableRule());
             AddRule<AlterTable>(new AlterTableRule());
-            
-            _guards.Add(GuardType.TypeCheck, type =>
-            {
-                if (!_container.ContainsKey(type as Type))
-                    throw new ArgumentOutOfRangeException($"Container does not contain query {(type as Type).Name}");
-            });
+            AddRule<InsertQuery>(new InsertAddParamsRule().And(new InsertConstructionRule()));
         }
 
         public IRuleContainer AddRule<TQuery>(IRule rule) where TQuery : ISqlQuery
@@ -44,7 +32,9 @@ namespace LoliSqlEntity.Lib.Rules
         public IRule GetRule<TQuery>() where TQuery : ISqlQuery
         {
             var queryType = typeof(TQuery);
-            _guards[GuardType.TypeCheck](queryType);
+            if (!_container.ContainsKey(queryType))
+                throw new ArgumentOutOfRangeException($"Container does not contain query {queryType.Name}");
+
             return _container[queryType];
 
         }
@@ -57,9 +47,12 @@ namespace LoliSqlEntity.Lib.Rules
         public IRuleContainer RemoveRule<TQuery>() where TQuery : ISqlQuery
         {
             var queryType = typeof(TQuery);
-            _guards[GuardType.TypeCheck](queryType);
+            if (!_container.ContainsKey(queryType))
+                throw new ArgumentOutOfRangeException($"Container does not contain query {queryType.Name}");
+
             _container.Remove(queryType);
             return this;
         }
+
     }
 }

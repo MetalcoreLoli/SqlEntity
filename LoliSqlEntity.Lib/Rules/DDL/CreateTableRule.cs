@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using LoliSqlEntity.Lib.Table;
-using LoliSqlEntity.Lib.Table.Parameters;
+using LoliSqlEntity.Lib.DDL.Table;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 
-namespace LoliSqlEntity.Lib.Rules
+namespace LoliSqlEntity.Lib.Rules.DDL
 {
     public sealed class CreateTableRule : CreateRule
     {
-        public override string Execute(ISqlQuery sqlQuery)
+        public override IRuleResult Execute(ISqlQuery sqlQuery)
         {
             if (sqlQuery is not CreateTable)
                 throw new InvalidCastException("sqlQuery is not CREATE TABLE");
@@ -26,12 +26,10 @@ namespace LoliSqlEntity.Lib.Rules
                 throw new Exception("cannot create empty table");
 
             sb.Append(' ').Append("(\n");
-            var columns = query.Parameters.Skip(1).Aggregate("", (acc, param) => acc + param + ",\n\t");
+            var columns = query.Parameters.Skip(1).AsStringWithDelimiter(",\n\t");
 
-            sb.Append(
-                    columns.SkipLast(3).Aggregate("", (acc, c) => acc + c))
-              .Append("\n)");
-            return sb.ToString();
+            sb.Append(columns).Append("\n)");
+            return DefaultRuleResult.Wrap(sb.ToString());
         }
     }
 }

@@ -10,7 +10,7 @@ namespace LoliSqlEntity.Lib.Test
     {
         public string Prefix => "MOCKRULE";
 
-        public string Execute(ISqlQuery sqlQuery)
+        public IRuleResult Execute(ISqlQuery sqlQuery)
         {
             
             var sb = new StringBuilder();
@@ -27,7 +27,7 @@ namespace LoliSqlEntity.Lib.Test
                     param.Take(param.Length - 2).Aggregate("", (acc, c) => acc + c));
             }
 
-            return sb.ToString();
+            return DefaultRuleResult.Wrap(sb.ToString());
         }
     }
 

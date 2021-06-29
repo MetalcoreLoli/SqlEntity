@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LoliSqlEntity.Lib.Table;
-using LoliSqlEntity.Lib.Table.Parameters;
+using LoliSqlEntity.Lib.DDL.Table;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
 
-namespace LoliSqlEntity.Lib.Rules
+namespace LoliSqlEntity.Lib.Rules.DDL
 {
     public class AlterTableRule :  AlterRule
     {
@@ -13,7 +12,7 @@ namespace LoliSqlEntity.Lib.Rules
         {
         }
 
-        public override string Execute(ISqlQuery sqlQuery)
+        public override IRuleResult Execute(ISqlQuery sqlQuery)
         {
             if (sqlQuery is not AlterTable)
                 throw new ArgumentOutOfRangeException("sqlQuery is not ALTER TABLE");
@@ -33,8 +32,7 @@ namespace LoliSqlEntity.Lib.Rules
                 else
                     sb.Append($"{param}");
             }
-            
-            return sb.ToString();
+            return DefaultRuleResult.Wrap(sb.ToString());
         }
     }
 }
