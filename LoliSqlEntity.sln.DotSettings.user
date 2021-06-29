@@ -14,5 +14,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.RuleContainerTests.MockRuleContainerRemoveTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.RuleContainerTests.DefaultRuleContainerRemoveTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.Guards.QueryTypeGuardTests.QueryTypeGuardsTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
