@@ -30,9 +30,9 @@ namespace LoliSqlEntity.Lib.Test
             return sb.ToString();
         }
     }
-    
-    
-    public class MockRuleContainer : IRuleContainer
+
+
+    internal class MockRuleContainer : IRuleContainer
     {
         private readonly Dictionary<string, IRule> _rules;
         
@@ -58,6 +58,11 @@ namespace LoliSqlEntity.Lib.Test
             if (!_rules.ContainsKey(queryName))
                 throw new ArgumentOutOfRangeException();
             return _rules[queryName];
+        }
+
+        public bool ContainsType(Type type)
+        {
+            throw new NotImplementedException();
         }
 
         public IRuleContainer RemoveRule<TQuery>() where TQuery : ISqlQuery

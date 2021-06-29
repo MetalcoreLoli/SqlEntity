@@ -36,5 +36,4 @@ namespace LoliSqlEntity.Lib.Test
                 container.AddRule<MockQuery>(new MockRule()).RemoveRule<MockQuery>().GetRule<MockQuery>());
         }
     }
-    
 }
