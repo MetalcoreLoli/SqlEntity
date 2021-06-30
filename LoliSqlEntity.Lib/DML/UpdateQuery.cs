@@ -12,6 +12,11 @@ namespace LoliSqlEntity.Lib.DML
             Parameters = parameters;
         }
 
+        public UpdateQuery()
+        {
+            Name = "UPDATE";
+        }
+
         public string Name { get; set; }
         public  TableNameParameter TableName { get; }
         public IList<ISqlParameter> Parameters { get; }

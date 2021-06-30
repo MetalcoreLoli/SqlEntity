@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
+using LoliSqlEntity.Lib.DDL.Table.Parameters;
+using LoliSqlEntity.Lib.DDL.Table.Parameters.Constraints;
 using LoliSqlEntity.Lib.Rules;
 
 namespace LoliSqlEntity.Lib
@@ -24,7 +27,20 @@ namespace LoliSqlEntity.Lib
             _query.Parameters.Add(parameter);
             return this;
         }
+
+        public SqlQueryBuilder<TSqlQuery> WithTableName(string name) => 
+            this.AddParameter(new TableNameParameter(name));
+
+        public SqlQueryBuilder<TSqlQuery> WithColumn(string name) => 
+            AddParameter(new ColumnParameter(name));
+
+        public SqlQueryBuilder<TSqlQuery> WithColumn(string name, ISqlParameterType type) => 
+            WithColumn(name, type, null);
         
+        public SqlQueryBuilder<TSqlQuery> WithColumn(string name, ISqlParameterType type,
+            IEnumerable<IColumnConstraint> constraints)
+            => AddParameter(new ColumnParameter(name, type, constraints));
+
         public string Construct()
         {
             var sb = new StringBuilder();

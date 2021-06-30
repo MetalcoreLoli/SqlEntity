@@ -39,6 +39,7 @@ namespace LoliSqlEntity.Lib.Rules
                 new GuardConfiguration(queryGuard)
                     .PermitOn<TypeGuardArg>(queryType)
                     .Execute();
+            
             return _container[queryType];
 
         }
