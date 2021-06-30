@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using LoliSqlEntity.Lib.DDL.Table;
 using LoliSqlEntity.Lib.DML;
+using LoliSqlEntity.Lib.Guards;
 using LoliSqlEntity.Lib.Rules.DDL;
 using LoliSqlEntity.Lib.Rules.DML;
 
@@ -9,6 +10,11 @@ namespace LoliSqlEntity.Lib.Rules
 {
     public class DefaultRuleContainer : IRuleContainer
     {
+        private enum GuardState 
+        {
+            TypeChecking
+        }
+        
         private readonly Dictionary<Type, IRule> _container = new();
 
         private static Lazy<DefaultRuleContainer> _instance = new(() => new DefaultRuleContainer());
@@ -32,9 +38,11 @@ namespace LoliSqlEntity.Lib.Rules
         public IRule GetRule<TQuery>() where TQuery : ISqlQuery
         {
             var queryType = typeof(TQuery);
-            if (!_container.ContainsKey(queryType))
-                throw new ArgumentOutOfRangeException($"Container does not contain query {queryType.Name}");
-
+            var queryGuard = new QueryTypeGuard(this);
+            var queryGuardConf = 
+                new GuardConfiguration(queryGuard)
+                    .PermitOn<TypeGuardArg>(queryType)
+                    .Execute();
             return _container[queryType];
 
         }
@@ -47,9 +55,12 @@ namespace LoliSqlEntity.Lib.Rules
         public IRuleContainer RemoveRule<TQuery>() where TQuery : ISqlQuery
         {
             var queryType = typeof(TQuery);
-            if (!_container.ContainsKey(queryType))
-                throw new ArgumentOutOfRangeException($"Container does not contain query {queryType.Name}");
-
+            var queryGuard = new QueryTypeGuard(this);
+            var queryGuardConf = 
+                new GuardConfiguration(queryGuard)
+                    .PermitOn<TypeGuardArg>(queryType)
+                    .Execute();
+            
             _container.Remove(queryType);
             return this;
         }

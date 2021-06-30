@@ -6,13 +6,11 @@ namespace LoliSqlEntity.Lib.Guards
 {
     public class QueryTypeGuard : Guard 
     {
-        private readonly string _message;
-
         public QueryTypeGuard(IGuardContext context) : base(context)
         {
         }
 
-        public QueryTypeGuard(object obj) : base(new GuardContextImpl(obj))
+        public QueryTypeGuard(IRuleContainer container) : base(new GuardContextImpl(container))
         {
         }
 
