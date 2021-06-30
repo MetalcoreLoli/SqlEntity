@@ -33,7 +33,7 @@ namespace LoliSqlEntity.Lib.DDL.Table.Parameters
         {
             Name = name;
             Type = type;
-            Constraints = constraints.ToList();
+            Constraints = constraints?.ToList();
         }
 
         public static ColumnParameterBuilder New(string name, ISqlParameterType type)

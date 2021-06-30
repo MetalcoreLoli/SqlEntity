@@ -13,8 +13,8 @@ namespace LoliSqlEntity.Lib.Test
         {
             var alterTable = 
                 new SqlQueryBuilder<AlterTable>()
-                    .AddParameter(new TableNameParameter("TEST"))
-                    .AddParameter(new ColumnParameter("testNvarchar", new SqlTypeNvarchar(25)))
+                    .WithTableName("TEST")
+                    .WithColumn("testNvarchar", new SqlTypeNvarchar(25))
                     .Construct();
 
             Assert.AreEqual("ALTER TABLE [dbo].[TEST]\n\tADD COLUMN [testNvarchar] NVARCHAR (25);\ngo\n", alterTable);
@@ -25,7 +25,7 @@ namespace LoliSqlEntity.Lib.Test
         {
             var alterTable = 
                 new SqlQueryBuilder<AlterTable>()
-                    .AddParameter(new TableNameParameter("TEST"))
+                    .WithTableName("TEST")
                     .AddParameter(new DropColumnParameter("testNvarchar"))
                     .Construct();
 
@@ -37,7 +37,7 @@ namespace LoliSqlEntity.Lib.Test
         {
             var alterTable = 
                 new SqlQueryBuilder<AlterTable>()
-                    .AddParameter(new TableNameParameter("TEST"))
+                    .WithTableName("TEST")
                     .AddParameter(new AlterColumnParameter("testNvarchar", new SqlTypeNvarchar(25)))
                     .Construct();
 

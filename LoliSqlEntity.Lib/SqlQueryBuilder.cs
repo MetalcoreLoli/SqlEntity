@@ -35,7 +35,7 @@ namespace LoliSqlEntity.Lib
             AddParameter(new ColumnParameter(name));
 
         public SqlQueryBuilder<TSqlQuery> WithColumn(string name, ISqlParameterType type) => 
-            WithColumn(name, type, null);
+            WithColumn(name, type, new List<IColumnConstraint>());
         
         public SqlQueryBuilder<TSqlQuery> WithColumn(string name, ISqlParameterType type,
             IEnumerable<IColumnConstraint> constraints)

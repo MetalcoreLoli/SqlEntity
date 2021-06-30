@@ -11,6 +11,8 @@
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.InsertQueryTests.InsertTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.RuleContainerTests.MockRuleContainerRemoveTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.RuleContainerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.AlterTableTests.AlterAddColumnTable&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1BC35C13-37D3-4D35-8D61-8B4CAE5467A3::net5.0::LoliSqlEntity.Lib.Test.AlterTableTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ec2d2d98_002D66e9_002D4063_002D8b1a_002Dbbd7d0d21595/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MockRuleContainerRemoveTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
