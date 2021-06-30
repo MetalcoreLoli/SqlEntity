@@ -10,11 +10,6 @@ namespace LoliSqlEntity.Lib.Rules
 {
     public class DefaultRuleContainer : IRuleContainer
     {
-        private enum GuardState 
-        {
-            TypeChecking
-        }
-        
         private readonly Dictionary<Type, IRule> _container = new();
 
         private static Lazy<DefaultRuleContainer> _instance = new(() => new DefaultRuleContainer());
@@ -31,7 +26,8 @@ namespace LoliSqlEntity.Lib.Rules
         public IRuleContainer AddRule<TQuery>(IRule rule) where TQuery : ISqlQuery
         {
             var queryType = typeof(TQuery);
-            _container.Add(queryType, rule);
+            if (!_container.ContainsKey(queryType))
+                _container.Add(queryType, rule);
             return this;
         }
 
